@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boston Co-work · locuszoom browser (MVP)</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <header>
+    <div class="row">
+      <h1>Locuszoom browser · 19 flip genes</h1>
+      <label>Gene:
+        <select id="gene-select"></select>
+      </label>
+      <span id="gene-info" class="muted"></span>
+    </div>
+    <div class="row">
+      <span class="muted">
+        Track order (top → bottom): GWAS eGFR · DAP PIP + coloc SCP · DAR log2FC (per CT strip) ·
+        WCC cor (per CT strip) · Gene model.
+        Pan/zoom via Plotly toolbar. Hover for values. Shared x-axis across tracks.
+      </span>
+    </div>
+  </header>
+  <main>
+    <div id="plot"></div>
+  </main>
+  <script src="browser.js"></script>
+</body>
+</html>

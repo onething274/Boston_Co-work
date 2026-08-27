@@ -1,0 +1,154 @@
+[
+  {
+    "gene": "ALKAL2",
+    "chrom": "chr2",
+    "tss": 288851,
+    "file": "data/ALKAL2.json",
+    "n_gwas": 1262,
+    "n_coloc": 1
+  },
+  {
+    "gene": "EPB41L3",
+    "chrom": "chr18",
+    "tss": 5630700,
+    "file": "data/EPB41L3.json",
+    "n_gwas": 1614,
+    "n_coloc": 1
+  },
+  {
+    "gene": "TRIM6",
+    "chrom": "chr11",
+    "tss": 5596108,
+    "file": "data/TRIM6.json",
+    "n_gwas": 3101,
+    "n_coloc": 1
+  },
+  {
+    "gene": "UMOD",
+    "chrom": "chr16",
+    "tss": 20356301,
+    "file": "data/UMOD.json",
+    "n_gwas": 1640,
+    "n_coloc": 1
+  },
+  {
+    "gene": "SHROOM3",
+    "chrom": "chr4",
+    "tss": 76435228,
+    "file": "data/SHROOM3.json",
+    "n_gwas": 1574,
+    "n_coloc": 2
+  },
+  {
+    "gene": "RNF152",
+    "chrom": "chr18",
+    "tss": 61894247,
+    "file": "data/RNF152.json",
+    "n_gwas": 2039,
+    "n_coloc": 2
+  },
+  {
+    "gene": "SLC47A1",
+    "chrom": "chr17",
+    "tss": 19495384,
+    "file": "data/SLC47A1.json",
+    "n_gwas": 960,
+    "n_coloc": 1
+  },
+  {
+    "gene": "MFSD4A",
+    "chrom": "chr1",
+    "tss": 205568884,
+    "file": "data/MFSD4A.json",
+    "n_gwas": 1717,
+    "n_coloc": 1
+  },
+  {
+    "gene": "B4GALT1",
+    "chrom": "chr9",
+    "tss": 33167356,
+    "file": "data/B4GALT1.json",
+    "n_gwas": 1430,
+    "n_coloc": 3
+  },
+  {
+    "gene": "SLC7A13",
+    "chrom": "chr8",
+    "tss": 86321146,
+    "file": "data/SLC7A13.json",
+    "n_gwas": 1611,
+    "n_coloc": 1
+  },
+  {
+    "gene": "NCOA7",
+    "chrom": "chr6",
+    "tss": 125781160,
+    "file": "data/NCOA7.json",
+    "n_gwas": 1018,
+    "n_coloc": 1
+  },
+  {
+    "gene": "STON2",
+    "chrom": "chr14",
+    "tss": 81436465,
+    "file": "data/STON2.json",
+    "n_gwas": 1508,
+    "n_coloc": 2
+  },
+  {
+    "gene": "A4GALT",
+    "chrom": "chr22",
+    "tss": 42721298,
+    "file": "data/A4GALT.json",
+    "n_gwas": 1777,
+    "n_coloc": 2
+  },
+  {
+    "gene": "RNASEH2C",
+    "chrom": "chr11",
+    "tss": 65720947,
+    "file": "data/RNASEH2C.json",
+    "n_gwas": 1011,
+    "n_coloc": 1
+  },
+  {
+    "gene": "MLLT3",
+    "chrom": "chr9",
+    "tss": 20622518,
+    "file": "data/MLLT3.json",
+    "n_gwas": 1148,
+    "n_coloc": 2
+  },
+  {
+    "gene": "DACH1",
+    "chrom": "chr13",
+    "tss": 71867204,
+    "file": "data/DACH1.json",
+    "n_gwas": 1339,
+    "n_coloc": 1
+  },
+  {
+    "gene": "TMA7",
+    "chrom": "chr3",
+    "tss": 48440256,
+    "file": "data/TMA7.json",
+    "n_gwas": 749,
+    "n_coloc": 1
+  },
+  {
+    "gene": "UBE2H",
+    "chrom": "chr7",
+    "tss": 129952960,
+    "file": "data/UBE2H.json",
+    "n_gwas": 1614,
+    "n_coloc": 3
+  },
+  {
+    "gene": "PPDPF",
+    "chrom": "chr20",
+    "tss": 63520764,
+    "file": "data/PPDPF.json",
+    "n_gwas": 1917,
+    "n_coloc": 1
+  }
+]
