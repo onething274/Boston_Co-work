@@ -243,7 +243,7 @@ function render(g) {
   layout.xaxis.showticklabels = false;
   layout.xaxis.title = "";
 
-  Plotly.react("plot", traces, layout, {
+  Plotly.newPlot("plot", traces, layout, {
     responsive: true,
     scrollZoom: true,
     displaylogo: false,
