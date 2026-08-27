@@ -15,11 +15,20 @@
       </label>
       <span id="gene-info" class="muted"></span>
     </div>
+    <div class="row filters">
+      <label>WCC top %: <input type="number" id="wcc-pct" min="0" max="100" step="1" value="100"></label>
+      <label>WCC padj ≤ <input type="number" id="wcc-padj" min="0" max="1" step="0.01" value="1"></label>
+      <span class="sep">·</span>
+      <label>DAR top %: <input type="number" id="dar-pct" min="0" max="100" step="1" value="100"></label>
+      <label>DAR p_val_adj ≤ <input type="number" id="dar-padj" min="0" max="1" step="0.01" value="1"></label>
+      <button id="reset-filters" type="button">reset</button>
+      <span id="filter-info" class="muted"></span>
+    </div>
     <div class="row">
       <span class="muted">
         Track order (top → bottom): GWAS eGFR · DAP PIP + coloc SCP · DAR log2FC (per CT strip) ·
         WCC cor (per CT strip) · Gene model.
-        Pan/zoom via Plotly toolbar. Hover for values. Shared x-axis across tracks.
+        Pan/zoom via Plotly toolbar. Hover for values. Filter above; 100 / 1 = no filter.
       </span>
     </div>
   </header>

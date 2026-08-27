@@ -24,6 +24,44 @@ function fmt(n, d = 3) {
   return Number(n).toFixed(d);
 }
 
+function getFilters() {
+  const nn = (v, fb) => {
+    const n = Number(v);
+    return Number.isFinite(n) ? n : fb;
+  };
+  return {
+    wccPct:  nn($("wcc-pct").value,  100),
+    wccPadj: nn($("wcc-padj").value, 1),
+    darPct:  nn($("dar-pct").value,  100),
+    darPadj: nn($("dar-padj").value, 1),
+  };
+}
+
+function applyFilters(g, f) {
+  const dar = {}, p2g = {};
+  let nDarKept = 0, nDarTotal = 0, nWccKept = 0, nWccTotal = 0;
+  for (const ct of CTS) {
+    const dArr = g.dar[ct] || [];
+    nDarTotal += dArr.length;
+    dar[ct] = dArr.filter(p =>
+      (p.percentile === null || p.percentile <= f.darPct) &&
+      (p.p_val_adj === null  || p.p_val_adj  <= f.darPadj));
+    nDarKept += dar[ct].length;
+
+    const pArr = g.p2g[ct] || [];
+    nWccTotal += pArr.length;
+    p2g[ct] = pArr.filter(p =>
+      (p.percentile === null || p.percentile <= f.wccPct) &&
+      (p.padj === null       || p.padj       <= f.wccPadj));
+    nWccKept += p2g[ct].length;
+  }
+  const info =
+    `WCC ${nWccKept.toLocaleString()}/${nWccTotal.toLocaleString()}   ·   ` +
+    `DAR ${nDarKept.toLocaleString()}/${nDarTotal.toLocaleString()}`;
+  $("filter-info").textContent = info;
+  return { ...g, dar, p2g };
+}
+
 function buildFigure(g) {
   const win = g.window;
   const traces = [];
@@ -232,11 +270,19 @@ async function init() {
     sel.appendChild(opt);
   }
 
+  let currentG = null;
+
+  function rerender() {
+    if (!currentG) return;
+    render(applyFilters(currentG, getFilters()));
+  }
+
   async function load(fp) {
     info.textContent = `loading ${fp} ...`;
     try {
       const g = await fetchJSON(fp);
-      render(g);
+      currentG = g;
+      rerender();
       info.textContent = `${g.gene}  ·  ${g.chrom}:${g.gene_start.toLocaleString()}–${g.gene_end.toLocaleString()}  ·  TSS ${g.tss.toLocaleString()}  (${g.strand})`;
     } catch (e) {
       info.textContent = "load failed";
@@ -245,6 +291,17 @@ async function init() {
   }
 
   sel.addEventListener("change", () => load(sel.value));
+  for (const id of ["wcc-pct", "wcc-padj", "dar-pct", "dar-padj"]) {
+    $(id).addEventListener("input", rerender);
+  }
+  $("reset-filters").addEventListener("click", () => {
+    $("wcc-pct").value = 100;
+    $("wcc-padj").value = 1;
+    $("dar-pct").value = 100;
+    $("dar-padj").value = 1;
+    rerender();
+  });
+
   load(manifest[0].file);
 }
 

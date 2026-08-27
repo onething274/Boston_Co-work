@@ -23,13 +23,19 @@ header {
 h1 { margin: 0 12px 0 0; font-size: 15px; font-weight: 600; }
 .row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 4px 0; }
 .muted { color: var(--muted); font-size: 12px; }
-select {
-  font-size: 13px;
+select, input[type="number"], button {
+  font-size: 12px;
   padding: 3px 6px;
   border: 1px solid var(--border);
   border-radius: 4px;
   background: white;
+  color: var(--fg);
 }
+input[type="number"] { width: 66px; }
+.filters label { display: inline-flex; align-items: center; gap: 4px; }
+.filters .sep { color: var(--border); margin: 0 4px; }
+button { cursor: pointer; }
+button:hover { background: #f5f5f5; }
 main {
   padding: 8px 12px 20px;
 }
