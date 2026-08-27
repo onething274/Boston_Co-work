@@ -70,8 +70,8 @@ def clean_num(x):
     return str(x)
 
 
-def dar_rows(df, ws, we):
-    sub = df[(df["center"] >= ws) & (df["center"] <= we)]
+def dar_rows(df, chrom, ws, we):
+    sub = df[(df["chrom"] == chrom) & (df["center"] >= ws) & (df["center"] <= we)]
     out = []
     for r in sub.itertuples(index=False):
         out.append({
@@ -166,7 +166,7 @@ def main():
                 dap_out.append({"pos": int(r.pos), "pip": clean_num(r.pip)})
 
         # DAR per CT (all peaks in window)
-        dar_per_ct = {ct: dar_rows(dar_by_ct[ct], ws, we) for ct in CTS}
+        dar_per_ct = {ct: dar_rows(dar_by_ct[ct], chrom, ws, we) for ct in CTS}
         # P2G per CT (only peaks assoc with this gene)
         p2g_per_ct = {ct: p2g_rows(p2g_by_ct[ct], gene, ws, we) for ct in CTS}
 
